@@ -1,4 +1,5 @@
 #include <iostream>
+#include <limits>
 
 using namespace std;
 
@@ -14,41 +15,46 @@ void division();
 
 int main() {
     int wahl = 0;
+    while (true) {
+        cout << "****Taschenrechner****"  << endl;
+        cout << "1 fuer Addition"  << endl;
+        cout << "2 fuer Subtraktion"  << endl;
+        cout << "3 fuer Multiplikation"  << endl;
+        cout << "4 fuer Division"  << endl;
+        cout << "Andere Zahl fuer Beenden des Rechners"  << endl;
 
-    cout << "Taschenrechner"  << endl;
-    cout << "1 fuer Addition"  << endl;
-    cout << "2 fuer Subtraktion"  << endl;
-    cout << "3 fuer Multiplikation"  << endl;
-    cout << "4 fuer Division"  << endl;
+        cin >> wahl;
 
-    cin >> wahl;
+        switch (wahl) {
+            case 1:
+                cout << "****Addition****"  << endl;
+                // hier Funktion für Addition einfügen
+                addition();
+                break;
+            case 2:
+                cout << "****Subtraktion**** "  << endl;
+                // hier Funktion für die Subtraktion einfügen
+                subtraction();
+                break;
+            case 3:
+                cout << "****Multiplikation**** "  << endl;
+                // hier die Funktion für die Multiplikation einfügen
+                break;
+            case 4:
+                cout << "****Division**** "  << endl;
+                // hier die Funktion für die Division einfügen
+                break;
+            default:
+                cout << "Falsche Auswahl, das Programm wird beendet."  << endl;
+                std::cin.clear();  // Fehlerzustand zurücksetzen
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  // Eingabepuffer leeren
+                continue;  // Erneute Eingabe anfordern
+                break;
+        }
+    }//End while
 
-    switch (wahl) {
-        case 1:
-            cout << "****Addition****"  << endl;
-            // hier Funktion für Addition einfügen
-            addition();
-            break;
-        case 2:
-            cout << "****Subtraktion**** "  << endl;
-            // hier Funktion für die Subtraktion einfügen
-            subtraction();
-            break;
-        case 3:
-            cout << "****Multiplikation**** "  << endl;
-            // hier die Funktion für die Multiplikation einfügen
-            break;
-        case 4:
-            cout << "****Division**** "  << endl;
-            // hier die Funktion für die Division einfügen
-            break;
-        default:
-            cout << "Falsche Auswahl, das Programm wird beendet."  << endl;
-            break;
-    }
+        return 0;
 
-
-    return 0;
 }
 //END main
 
@@ -60,7 +66,10 @@ void addition()
     cin >> zahl2;
     resultat = zahl1 + zahl2;
     cout << "Resultat: " << resultat << endl;
+    cout << "--------------------- " << endl;
+    cout << " " << endl;
 }
+
 
 void subtraction()
 {
@@ -70,4 +79,6 @@ void subtraction()
     cin >> zahl2;
     resultat = zahl1 - zahl2;
     cout << "Resultat: " << resultat << endl;
+    cout << "--------------------- " << endl;
+    cout << " " << endl;
 }
