@@ -2,6 +2,16 @@
 
 using namespace std;
 
+float zahl1 =0;
+float zahl2 =0;
+float resultat =0;
+
+void addition();
+void subtraction();
+void multiplication();
+void division();
+
+
 int main() {
     int wahl = 0;
 
@@ -15,19 +25,21 @@ int main() {
 
     switch (wahl) {
         case 1:
-            cout << "Gruppenmitglied 1 kann hier die Addition implementieren."  << endl;
+            cout << "****Addition****"  << endl;
             // hier Funktion für Addition einfügen
+            addition();
             break;
         case 2:
-            cout << "Gruppenmitglied 1 kann hier die Subtraktion implementieren."  << endl;
+            cout << "****Subtraktion**** "  << endl;
             // hier Funktion für die Subtraktion einfügen
+            subtraction();
             break;
         case 3:
-            cout << "Gruppenmitglied 1 kann hier die Multiplikation implementieren."  << endl;
+            cout << "****Multiplikation**** "  << endl;
             // hier die Funktion für die Multiplikation einfügen
             break;
         case 4:
-            cout << "Gruppenmitglied 1 kann hier die Division implementieren."  << endl;
+            cout << "****Division**** "  << endl;
             // hier die Funktion für die Division einfügen
             break;
         default:
@@ -37,4 +49,25 @@ int main() {
 
 
     return 0;
+}
+//END main
+
+void addition()
+{
+    cout << "Geben Sie 1.Zahl ein" << endl;
+    cin >> zahl1;
+    cout << "Geben Sie 2.Zahl ein" << endl;
+    cin >> zahl2;
+    resultat = zahl1 + zahl2;
+    cout << "Resultat: " << resultat << endl;
+}
+
+void subtraction()
+{
+    cout << "Geben Sie 1.Zahl ein" << endl;
+    cin >> zahl1;
+    cout << "Geben Sie 2.Zahl ein" << endl;
+    cin >> zahl2;
+    resultat = zahl1 - zahl2;
+    cout << "Resultat: " << resultat << endl;
 }
